@@ -10,7 +10,6 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-
 /**
  *
  * @author franc
@@ -50,16 +49,13 @@ public class FotosOrchestrator {
         fotoLikes = service.OrdenarLista(fotoLikes, 0);
         fotoLikes.stream().forEach(System.out::println);
 //promedio
-        for (Fotos ph : fotoLikes) {
-            promedio += fotoLikes.get(i).getRepeticiones();
-            i++;
-        }
+
+        promedio = fotoLikes.stream().mapToLong(suma -> suma.getRepeticiones()).sum();
         promedio = promedio / fotoLikes.size();
 
-        System.out.println("La minima cantidad de likes repetidos es " + minimo + " y son "+ fotosminima);
-        System.out.println("La maxima cantidad de likes repetidos es " + maximo + " y son "+ fotosmaxima);
+        System.out.println("La minima cantidad de likes repetidos es " + minimo + " y son " + fotosminima);
+        System.out.println("La maxima cantidad de likes repetidos es " + maximo + " y son " + fotosmaxima);
         System.out.println("La cantidad promedio de likes repetidos es " + promedio);
-   
 
 //        fotoLikes.stream().forEach(System.out::println);
     }

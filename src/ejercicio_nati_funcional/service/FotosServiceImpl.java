@@ -28,12 +28,4 @@ public class FotosServiceImpl {
         }
         return r;
     }
-
-    public Long Promedio(Fotos lis, int i) {
-
-        Long prom = (i + 1) * lis.getRepeticiones();
-
-        return prom;
-    }
-
 }
